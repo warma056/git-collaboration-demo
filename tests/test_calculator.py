@@ -1,6 +1,6 @@
 import pytest
 
-from src.calculator import add, divide, multiply, power, subtract
+from src.calculator import add, divide, is_prime, multiply, power, subtract
 
 
 def test_add():
@@ -31,3 +31,20 @@ def test_power():
     assert power(2, 0) == 1
     with pytest.raises(ValueError, match="零不能作为负指数的底数"):
         power(0, -2)
+
+def test_is_prime():
+    assert is_prime(2) is True
+    assert is_prime(3) is True
+    assert is_prime(97) is True
+    assert is_prime(1) is False
+    assert is_prime(0) is False
+    assert is_prime(-7) is False
+    assert is_prime(9) is False
+    assert is_prime(15) is False
+
+
+def test_is_prime_invalid_input():
+    with pytest.raises(ValueError, match="只能判断整数是否为质数"):
+        is_prime(3.5)
+    with pytest.raises(ValueError, match="只能判断整数是否为质数"):
+        is_prime(True)
