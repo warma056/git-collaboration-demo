@@ -29,6 +29,7 @@ def power(base: float, exponent: float) -> float:
         raise ValueError("零不能作为负指数的底数")
     return base**exponent
 
+
 def is_prime(n: int) -> bool:
     """判断整数是否为质数。"""
     if isinstance(n, bool) or not isinstance(n, int):

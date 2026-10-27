@@ -32,6 +32,7 @@ def test_power():
     with pytest.raises(ValueError, match="零不能作为负指数的底数"):
         power(0, -2)
 
+
 def test_is_prime():
     assert is_prime(2) is True
     assert is_prime(3) is True
